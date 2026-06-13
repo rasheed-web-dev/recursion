@@ -18,4 +18,25 @@ function fib(nth) {
   return ans;
 }
 
-console.log(fib(8));
+function fibRec(nth) {
+  if (nth == 1) {
+    return [0];
+  }
+  if (nth == 2) {
+    return [0, 1];
+  }
+  return fibRecHelper(nth);
+}
+
+function fibRecHelper(nth, ans = [0, 1], step = 2) {
+  if (nth == step) {
+    return ans;
+  }
+  const newNumber = ans.at(-1) + ans.at(-2);
+  ans.push(newNumber);
+  return fibRecHelper(nth, ans, step + 1);
+}
+
+console.log(fib(1));
+let test = fibRec(123);
+console.log(test);
