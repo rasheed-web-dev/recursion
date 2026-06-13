@@ -29,6 +29,7 @@ function fibRec(nth) {
 }
 
 function fibRecHelper(nth, ans = [0, 1], step = 2) {
+  console.log("This was printed recursively");
   if (nth == step) {
     return ans;
   }
@@ -38,5 +39,5 @@ function fibRecHelper(nth, ans = [0, 1], step = 2) {
 }
 
 console.log(fib(1));
-let test = fibRec(123);
+let test = fibRec(8);
 console.log(test);
